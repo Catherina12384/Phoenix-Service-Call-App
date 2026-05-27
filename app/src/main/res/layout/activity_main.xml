@@ -19,6 +19,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -48,7 +49,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_admin"
-                android:tint="@color/primary"
+                app:tint="@color/primary"
                 android:contentDescription="@string/admin_panel"
                 android:visibility="gone" />
 
@@ -67,7 +68,8 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout="@layout/fragment_placeholder" />
 
     <!-- FAB — Create new task, visible on all tabs -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton

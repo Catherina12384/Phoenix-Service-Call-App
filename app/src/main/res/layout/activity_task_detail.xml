@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_task_detail.xml
+
+    ┌──────────────────────────────────┐
+    │  ← Task Detail     [Edit(owner)] │  Toolbar
+    ├──────────────────────────────────┤
+    │  [Status chip]    [Call type]    │
+    │  Customer Name                   │
+    │  📞 Phone                        │
+    │  🔧 Service Type                 │
+    │  📝 Description                  │
+    │  👤 Created by · 🕐 Created at   │
+    │  ─────────────────────────────   │
+    │  [ Mark Done ]  [ Request Delete ]│
+    └──────────────────────────────────┘
+    Owner only: Edit pencil icon in toolbar.
+    Delete button available to all, triggers soft-delete request.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.ServiceCallApp.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Task Detail">
+
+            <!-- Edit icon — owner only -->
+            <ImageButton
+                android:id="@+id/action_edit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/primary"
+                android:contentDescription="@string/edit"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingBottom="40dp">
+
+            <!-- Status + Call type row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_status"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp" />
+
+                <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_call_type"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp" />
+
+            </LinearLayout>
+
+            <!-- Detail card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.ServiceCallApp.Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Customer Name -->
+                    <TextView
+                        android:id="@+id/tv_customer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+
+                    <!-- Phone -->
+                    <TextView android:id="@+id/tv_phone"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="15sp" android:textColor="@color/text_secondary"
+                        android:layout_marginTop="14dp"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_calls"
+                        android:drawablePadding="8dp"
+                        app:drawableTint="@color/text_hint" />
+
+                    <!-- Service Type -->
+                    <TextView android:id="@+id/tv_service_type"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="15sp" android:textColor="@color/text_secondary"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_tasks"
+                        android:drawablePadding="8dp"
+                        app:drawableTint="@color/text_hint" />
+
+                    <!-- Divider -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginVertical="16dp"/>
+
+                    <!-- Description label -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/notes" android:textSize="12sp"
+                        android:textColor="@color/text_hint" android:textAllCaps="true"
+                        android:letterSpacing="0.08"/>
+
+                    <!-- Description value -->
+                    <TextView android:id="@+id/tv_description"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="15sp" android:textColor="@color/text_primary"
+                        android:layout_marginTop="6dp" android:lineSpacingMultiplier="1.4"/>
+
+                    <!-- Divider -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginVertical="16dp"/>
+
+                    <!-- Created by + Created at -->
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/created_by" android:textSize="11sp"
+                                android:textColor="@color/text_hint"/>
+                            <TextView android:id="@+id/tv_created_by"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp" android:textColor="@color/text_primary"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/created_at" android:textSize="11sp"
+                                android:textColor="@color/text_hint"/>
+                            <TextView android:id="@+id/tv_created_at"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp" android:textColor="@color/text_primary"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Completed at (shown only when done) -->
+                    <LinearLayout android:id="@+id/layout_completed_at"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/completed_at" android:textSize="11sp"
+                            android:textColor="@color/text_hint"/>
+                        <TextView android:id="@+id/tv_completed_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/status_done"
+                            android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mark_done"
+                style="@style/Widget.ServiceCallApp.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/mark_done" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_snooze"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:minHeight="52dp"
+                app:cornerRadius="12dp"
+                android:text="@string/snooze" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_request_delete"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:minHeight="52dp"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/error"
+                android:textColor="@color/error"
+                android:text="@string/request_deletion" />
+
+            <!-- Progress indicator -->
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                app:indicatorColor="@color/primary"
+                app:trackColor="@color/primary_container" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

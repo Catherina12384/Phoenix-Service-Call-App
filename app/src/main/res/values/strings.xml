@@ -38,12 +38,22 @@
     <string name="task_detail">Task Detail</string>
     <string name="mark_done">Mark as Done</string>
     <string name="snooze">Snooze</string>
+    <string name="notes">Notes</string>
+    <string name="created_by">Created by</string>
+    <string name="created_at">Created at</string>
+    <string name="completed_at">Completed at</string>
+    <string name="request_deletion">Request Deletion</string>
     <string name="customer_name">Customer Name</string>
     <string name="customer_phone">Customer Phone</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="service_details">Service Details</string>
     <string name="service_type">Service Type</string>
     <string name="description">Description (optional)</string>
+    <string name="call_type">Call Type</string>
     <string name="call_type_office">Office Call</string>
     <string name="call_type_personal">Personal Call</string>
+    <string name="personal_call_notice">Personal calls are private and only visible to you.</string>
+    <string name="save_task">Save Task</string>
 
     <!-- Service types -->
     <string name="service_ac">AC Service</string>
@@ -72,6 +82,7 @@
     <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="bullet_separator">" • "</string>
     <string name="ok">OK</string>
     <string name="no_internet">No internet connection</string>
     <string name="error_generic">Something went wrong. Please try again.</string>

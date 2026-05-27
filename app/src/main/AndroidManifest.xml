@@ -4,11 +4,16 @@
     Phase 1: All permissions declared. Phone/call permissions used from Phase 3.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.phoenix.servicecall">
 
     <!-- ── Permissions ─────────────────────────────────────────── -->
 
     <!-- Internet: Firebase SDK -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -40,9 +45,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_splash_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_splash_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceCallApp"
         tools:targetApi="31">
