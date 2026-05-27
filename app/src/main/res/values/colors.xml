@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ServiceCallApp — Color System (Material Design 3)
+
+    Primary:  Blue  — brand, buttons, active states
+    Secondary: Teal — secondary actions
+    Error:    Red   — overdue tasks, errors
+    Warning:  Amber — snoozed tasks
+    Success:  Green — completed tasks
+-->
+<resources>
+
+    <!-- ── Primary brand (Blue) ──────────────────────────────── -->
+    <color name="primary">          #1A56DB </color>
+    <color name="on_primary">       #FFFFFF </color>
+    <color name="primary_container">#DBEAFE </color>
+    <color name="on_primary_container">#1E3A5F </color>
+    <color name="primary_variant">  #1740A6 </color>
+
+    <!-- ── Secondary (Teal) ──────────────────────────────────── -->
+    <color name="secondary">        #0EA5E9 </color>
+    <color name="on_secondary">     #FFFFFF </color>
+    <color name="secondary_container">#E0F2FE </color>
+
+    <!-- ── Surface & Background ──────────────────────────────── -->
+    <color name="background">       #F8FAFC </color>
+    <color name="surface">          #FFFFFF </color>
+    <color name="surface_variant">  #F1F5F9 </color>
+    <color name="on_surface">       #0F172A </color>
+    <color name="on_surface_variant">#64748B </color>
+    <color name="outline">          #CBD5E1 </color>
+
+    <!-- ── Error (Red) ───────────────────────────────────────── -->
+    <color name="error">            #DC2626 </color>
+    <color name="on_error">         #FFFFFF </color>
+    <color name="error_container">  #FEE2E2 </color>
+    <color name="on_error_container">#7F1D1D </color>
+
+    <!-- ── Task status colors ────────────────────────────────── -->
+    <!-- Overdue -->
+    <color name="status_overdue">   #DC2626 </color>
+    <color name="status_overdue_bg">#FEF2F2 </color>
+    <!-- Snoozed -->
+    <color name="status_snoozed">   #D97706 </color>
+    <color name="status_snoozed_bg">#FFFBEB </color>
+    <!-- Pending -->
+    <color name="status_pending">   #1A56DB </color>
+    <color name="status_pending_bg">#EFF6FF </color>
+    <!-- Done -->
+    <color name="status_done">      #16A34A </color>
+    <color name="status_done_bg">   #F0FDF4 </color>
+
+    <!-- ── Text ──────────────────────────────────────────────── -->
+    <color name="text_primary">     #0F172A </color>
+    <color name="text_secondary">   #475569 </color>
+    <color name="text_hint">        #94A3B8 </color>
+    <color name="text_on_dark">     #FFFFFF </color>
+
+    <!-- ── Bottom navigation ─────────────────────────────────── -->
+    <color name="nav_active">       #1A56DB </color>
+    <color name="nav_inactive">     #94A3B8 </color>
+
+    <!-- ── Card & divider ────────────────────────────────────── -->
+    <color name="card_background">  #FFFFFF </color>
+    <color name="divider">          #E2E8F0 </color>
+    <color name="ripple">           #1A56DB1F </color>
+
+    <!-- Dark mode variants -->
+    <color name="primary_dark">     #3B82F6 </color>
+    <color name="background_dark">  #0F172A </color>
+    <color name="surface_dark">     #1E293B </color>
+    <color name="on_surface_dark">  #F1F5F9 </color>
+
+</resources>

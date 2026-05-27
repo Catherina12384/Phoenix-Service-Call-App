@@ -1,0 +1,81 @@
+# Gradle files
+.gradle/
+build/
+**/build/
+
+# Local configuration
+local.properties
+gradle.properties
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Generated files
+captures/
+output.json
+
+# Firebase / Google Services (keep only if you want to commit)
+google-services.json
+firebase.json
+firestore.rules
+firestore.indexes.json
+
+# Android specific
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Keystore files (never commit signing keys)
+*.jks
+*.keystore
+
+# NDK / CMake
+obj/
+.externalNativeBuild/
+
+# Misc
+*.tmp
+*.swp
+
+# Android Studio navigation editor temp files
+.navigation/
+
+# Android Studio crash reports
+hs_err_pid*
+
+# IntelliJ/Android Studio caches
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+
+# Gradle build cache
+.gradle/
+.gradle/daemon/
+.gradle/native/
+.gradle/taskArtifacts/
+
+# Generated APK/AAB outputs
+*.aab
+
+# Generated signing configs
+signing.properties
+
+# Generated coverage reports
+*.ec
+coverage/
+
+# Generated test results
+test-results/

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Service Call</string>
+    <string name="app_tagline">Service Call Management</string>
+
+    <!-- Auth -->
+    <string name="sign_in">Sign In</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="login_subtitle">Sign in to manage your service calls</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_out_confirm">Are you sure you want to sign out?</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_office_tasks">Tasks</string>
+    <string name="nav_personal_calls">My Calls</string>
+    <string name="nav_ai_chat">AI</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="today_summary">Today\'s Summary</string>
+    <string name="pending_tasks">Pending</string>
+    <string name="done_tasks">Completed</string>
+    <string name="overdue_tasks">Overdue</string>
+    <string name="snoozed_tasks">Snoozed</string>
+
+    <!-- Tasks -->
+    <string name="create_task">New Task</string>
+    <string name="office_tasks">Office Tasks</string>
+    <string name="personal_calls">My Calls</string>
+    <string name="task_detail">Task Detail</string>
+    <string name="mark_done">Mark as Done</string>
+    <string name="snooze">Snooze</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_phone">Customer Phone</string>
+    <string name="service_type">Service Type</string>
+    <string name="description">Description (optional)</string>
+    <string name="call_type_office">Office Call</string>
+    <string name="call_type_personal">Personal Call</string>
+
+    <!-- Service types -->
+    <string name="service_ac">AC Service</string>
+    <string name="service_plumbing">Plumbing</string>
+    <string name="service_electrical">Electrical</string>
+    <string name="service_other">Other</string>
+
+    <!-- Status labels -->
+    <string name="status_pending">Pending</string>
+    <string name="status_snoozed">Snoozed</string>
+    <string name="status_done">Done</string>
+    <string name="status_overdue">Overdue</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="role_owner">Owner</string>
+    <string name="role_agent">Service Agent</string>
+
+    <!-- Admin -->
+    <string name="admin_panel">Admin Panel</string>
+    <string name="admin_stats">Statistics</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="coming_soon">Coming soon in the next phase.</string>
+</resources>
