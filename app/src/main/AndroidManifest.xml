@@ -80,6 +80,41 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
+        <!--  Task creation (opened from FAB) -->
+        <activity
+            android:name=".CreateTaskActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--  Task detail view -->
+        <activity
+            android:name=".TaskDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--  Owner: edit a task -->
+        <activity
+            android:name=".EditTaskActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--  Owner: pending deletion approvals -->
+        <activity
+            android:name=".PendingDeletionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!--  All users: office contacts list -->
+        <activity
+            android:name=".ContactsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+
         <!-- ── Services ───────────────────────────────────────── -->
 
         <!-- Firebase Cloud Messaging service -->

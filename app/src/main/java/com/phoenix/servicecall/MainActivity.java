@@ -90,9 +90,22 @@ public class MainActivity extends AppCompatActivity
         if (adminIcon != null) {
             adminIcon.setVisibility(session.isOwner() ? View.VISIBLE : View.GONE);
             adminIcon.setOnClickListener(v -> {
-                // Phase 5: startActivity(new Intent(this, AdminPanelActivity.class));
+                // Show popup menu with admin options
+                android.widget.PopupMenu popup = new android.widget.PopupMenu(this, v);
+                popup.getMenu().add(0, 1, 0, "Pending Deletions");
+                popup.getMenu().add(0, 2, 1, "Office Contacts");
+                popup.setOnMenuItemClickListener(item -> {
+                    if (item.getItemId() == 1) {
+                        startActivity(new Intent(this, PendingDeletionsActivity.class));
+                    } else if (item.getItemId() == 2) {
+                        startActivity(new Intent(this, ContactsActivity.class));
+                    }
+                    return true;
+                });
+                popup.show();
             });
         }
+
     }
 
     // ── Bottom Navigation ────────────────────────────────────────
@@ -117,9 +130,8 @@ public class MainActivity extends AppCompatActivity
 
     private void setupFab() {
         fab = findViewById(R.id.fab_create_task);
-        fab.setOnClickListener(v -> {
-            // Phase 2: startActivity(new Intent(this, CreateTaskActivity.class));
-        });
+        fab.setOnClickListener(v ->
+                startActivity(new Intent(this, CreateTaskActivity.class)));
     }
 
     // ── Fragment Loading ─────────────────────────────────────────
@@ -139,8 +151,8 @@ public class MainActivity extends AppCompatActivity
 
     private Fragment createFragment(String tag) {
         switch (tag) {
-            case TAG_DASHBOARD: return new PlaceholderFragment("Dashboard\n\nPhase 2 will show today's\ntask summary and stats.");
-            case TAG_TASKS:     return new PlaceholderFragment("Office Tasks\n\nPhase 2 will show the\nshared task pool here.");
+            case TAG_DASHBOARD: return DashboardFragment.newInstance();
+            case TAG_TASKS:     return OfficeTasksFragment.newInstance();
             case TAG_CALLS:     return new PlaceholderFragment("My Calls\n\nPhase 3 will show your\npersonal call log here.");
             case TAG_AI:        return new PlaceholderFragment("AI Assistant\n\nPhase 8 will activate\nGemini chat here.");
             case TAG_PROFILE:   return ProfileFragment.newInstance();
