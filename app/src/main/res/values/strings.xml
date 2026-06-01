@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Service Call</string>
+    <string name="app_name">Phoenix Computers</string>
     <string name="app_tagline">Service Call Management</string>
 
     <!-- Auth -->
@@ -11,7 +11,9 @@
     <string name="password_hint">Password</string>
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
+    <string name="welcome">Welcome</string>
     <string name="welcome_back">Welcome back</string>
+    <string name="company_name">PHOENIX COMPUTERS</string>
     <string name="login_subtitle">Sign in to manage your service calls</string>
     <string name="sign_out">Sign Out</string>
     <string name="sign_out_confirm">Are you sure you want to sign out?</string>
@@ -109,6 +111,10 @@
     <string name="status_deletion_requested">Delete Pending</string>
     <string name="approve_deletion">Approve Deletion</string>
     <string name="reject_deletion">Reject Deletion</string>
+
+    <string name="brand_part_1">SERVICE</string>
+    <string name="brand_part_2">CALL</string>
+    <string name="company_logo">Company Logo</string>
 </resources>
 
 

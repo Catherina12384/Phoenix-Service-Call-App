@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity
     private void setupToolbar() {
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
 
         // Owner-only admin button
         View adminIcon = findViewById(R.id.action_admin);
@@ -153,10 +156,10 @@ public class MainActivity extends AppCompatActivity
         switch (tag) {
             case TAG_DASHBOARD: return DashboardFragment.newInstance();
             case TAG_TASKS:     return OfficeTasksFragment.newInstance();
-            case TAG_CALLS:     return new PlaceholderFragment("My Calls\n\nPhase 3 will show your\npersonal call log here.");
-            case TAG_AI:        return new PlaceholderFragment("AI Assistant\n\nPhase 8 will activate\nGemini chat here.");
+            case TAG_CALLS:     return PlaceholderFragment.newInstance("My Calls\n\nPhase 3 will show your\npersonal call log here.");
+            case TAG_AI:        return PlaceholderFragment.newInstance("AI Assistant\n\nPhase 8 will activate\nGemini chat here.");
             case TAG_PROFILE:   return ProfileFragment.newInstance();
-            default:            return new PlaceholderFragment("Coming soon.");
+            default:            return PlaceholderFragment.newInstance("Coming soon.");
         }
     }
 

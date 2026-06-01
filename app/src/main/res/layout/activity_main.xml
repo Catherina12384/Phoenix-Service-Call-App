@@ -2,19 +2,6 @@
 <!--
     activity_main.xml
     Root layout with toolbar, fragment container, FAB, and bottom navigation.
-
-    Structure:
-    ┌──────────────────────────────┐
-    │  Toolbar (logo + admin icon) │
-    ├──────────────────────────────┤
-    │                              │
-    │  Fragment Container          │
-    │  (swaps between tabs)        │
-    │                              │
-    │                    [+ FAB]   │
-    ├──────────────────────────────┤
-    │  Bottom Navigation Bar       │
-    └──────────────────────────────┘
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,15 +17,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/surface"
+        android:fitsSystemWindows="true"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@style/Widget.ServiceCallApp.Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/app_name"
-            app:titleTextAppearance="@style/TextAppearance.ServiceCallApp.TitleLarge">
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetStartWithNavigation="0dp"
+            app:contentInsetStart="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <!-- Company Logo -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_logo"
+                    android:contentDescription="@string/company_logo" />
+
+                <!-- Application Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/app_name"
+                    style="@style/TextAppearance.ServiceCallApp.TitleLarge" />
+
+            </LinearLayout>
 
             <!-- Admin panel icon — only visible to owner -->
             <ImageButton
@@ -71,20 +85,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:layout="@layout/fragment_placeholder" />
 
-    <!-- FAB — Create new task, visible on all tabs -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_create_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="80dp"
-        android:src="@drawable/ic_add"
-        android:tint="@color/on_primary"
-        android:contentDescription="@string/create_task"
-        app:backgroundTint="@color/primary"
-        app:fabSize="normal"
-        app:elevation="6dp" />
-
     <!-- Bottom navigation bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -95,7 +95,22 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/nav_selector"
         app:itemTextColor="@color/nav_selector"
-        app:itemActiveIndicatorColor="@color/primary_container"
         app:elevation="8dp" />
+
+    <!-- FAB — Create new task, visible on all tabs -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_create_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription="@string/create_task"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/primary"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/bottom_navigation"
+        app:layout_anchorGravity="top|end"
+        app:tint="@color/on_primary" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

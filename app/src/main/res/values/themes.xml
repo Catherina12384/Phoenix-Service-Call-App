@@ -51,9 +51,8 @@
 
     <!-- Splash screen theme — shown during cold start -->
     <style name="Theme.ServiceCallApp.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/primary</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
-        <item name="windowSplashScreenBrandingImage">@drawable/ic_splash_brand</item>
+        <item name="windowSplashScreenBackground">@color/surface</item>
+        <item name="windowSplashScreenAnimatedIcon">@android:color/transparent</item>
         <item name="postSplashScreenTheme">@style/Theme.ServiceCallApp</item>
     </style>
 

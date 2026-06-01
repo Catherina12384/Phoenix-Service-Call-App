@@ -133,11 +133,12 @@ public class DashboardFragment extends Fragment {
 
         // Service types from Firestore
         FirestoreRepository.getInstance().getServiceTypes(types -> {
+            if (getContext() == null || !isAdded()) return;
             List<String> withAll = new ArrayList<>();
             withAll.add("All");
             withAll.addAll(types);
             dropdownFilterService.setAdapter(new ArrayAdapter<>(
-                    requireContext(), android.R.layout.simple_dropdown_item_1line, withAll));
+                    getContext(), android.R.layout.simple_dropdown_item_1line, withAll));
             dropdownFilterService.setText("All", false);
         }, e -> {});
     }
@@ -235,6 +236,7 @@ public class DashboardFragment extends Fragment {
 
         // Load agent list for filter dropdown and team cards
         FirestoreRepository.getInstance().getAllAgents(agents -> {
+            if (getContext() == null || !isAdded()) return;
             agentList = agents;
 
             // Populate agent filter dropdown
@@ -242,7 +244,7 @@ public class DashboardFragment extends Fragment {
             names.add("All");
             for (User u : agents) names.add(u.getName());
             dropdownFilterAgent.setAdapter(new ArrayAdapter<>(
-                    requireContext(), android.R.layout.simple_dropdown_item_1line, names));
+                    getContext(), android.R.layout.simple_dropdown_item_1line, names));
             dropdownFilterAgent.setText("All", false);
 
             // Build team cards from today's tasks already loaded

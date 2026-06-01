@@ -46,8 +46,9 @@ public class SplashActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-        // Keep splash visible until we're ready to route
-        splashScreen.setKeepOnScreenCondition(() -> !isReadyToRoute);
+        // We don't use setKeepOnScreenCondition here because we want to show 
+        // our custom activity_splash.xml (with text and tagline) while the 
+        // background auth check runs.
 
         // Enforce a minimum display time so the logo doesn't flash
         new Handler(Looper.getMainLooper()).postDelayed(() -> {

@@ -85,12 +85,15 @@ public class OfficeTasksFragment extends Fragment {
         viewModel.markDone(task.getTaskId());
 
         // Undo Snackbar — 5 seconds
-        Snackbar.make(root, task.getCustomerName() + " marked as done", 5000)
+        Snackbar snackbar = Snackbar.make(root, task.getCustomerName() + " marked as done", 5000)
                 .setAction("UNDO", v -> viewModel.undoMarkDone(task.getTaskId()))
-                .setActionTextColor(requireContext().getColor(R.color.primary_container))
-                .setBackgroundTint(requireContext().getColor(R.color.status_done))
-                .setTextColor(android.graphics.Color.WHITE)
-                .show();
+                .setTextColor(android.graphics.Color.WHITE);
+
+        if (getContext() != null) {
+            snackbar.setActionTextColor(getContext().getColor(R.color.primary_container))
+                    .setBackgroundTint(getContext().getColor(R.color.status_done));
+        }
+        snackbar.show();
     }
 
     private void onSwipeLeft(Task task, View root) {
@@ -128,9 +131,9 @@ public class OfficeTasksFragment extends Fragment {
         });
 
         viewModel.getErrorMessage().observe(getViewLifecycleOwner(), error -> {
-            if (error != null && getView() != null) {
+            if (error != null && getView() != null && getContext() != null) {
                 Snackbar.make(getView(), error, Snackbar.LENGTH_LONG)
-                        .setBackgroundTint(requireContext().getColor(R.color.error))
+                        .setBackgroundTint(getContext().getColor(R.color.error))
                         .setTextColor(android.graphics.Color.WHITE)
                         .show();
             }

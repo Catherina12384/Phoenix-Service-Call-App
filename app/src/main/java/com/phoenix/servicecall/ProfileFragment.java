@@ -18,55 +18,17 @@ import com.phoenix.servicecall.auth.LoginActivity;
 import com.phoenix.servicecall.utils.SessionManager;
 
 /**
- * PlaceholderFragment — shown for tabs not yet implemented.
- * Replaced phase by phase with real fragments.
- */
-class PlaceholderFragment extends Fragment {
-
-    private static final String ARG_TEXT = "text";
-
-    static PlaceholderFragment newInstance(String text) {
-        PlaceholderFragment f = new PlaceholderFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_TEXT, text);
-        f.setArguments(args);
-        return f;
-    }
-
-    PlaceholderFragment(String text) {
-        Bundle args = new Bundle();
-        args.putString(ARG_TEXT, text);
-        setArguments(args);
-    }
-
-    PlaceholderFragment() {}
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_placeholder, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        TextView tv = view.findViewById(R.id.placeholder_text);
-        String text = getArguments() != null
-                ? getArguments().getString(ARG_TEXT, "Coming soon.") : "Coming soon.";
-        if (tv != null) tv.setText(text);
-    }
-}
-
-/**
  * ProfileFragment — shows user info and logout button.
  * Phase 1 implementation: name, email, role badge, logout.
  */
-class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
+    }
+
+    public ProfileFragment() {
+        // Required empty public constructor
     }
 
     @Nullable
